@@ -1,0 +1,480 @@
+/* Локальные стили страницы «Трюки» */
+
+.stunt-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.stunt-formula {
+  border: 1.5px solid var(--ink);
+  background: var(--paper-2);
+  padding: 20px 22px;
+  box-shadow: 4px 4px 0 rgba(33, 27, 22, 0.08);
+}
+
+.stunt-formula .kicker { margin-bottom: 8px; }
+.stunt-formula p { margin: 0 0 10px; }
+.stunt-formula p:last-child { margin-bottom: 0; }
+.stunt-formula b { color: var(--accent); }
+
+.stunt-rule {
+  border-left: 3px solid var(--olive);
+  padding: 4px 0 4px 16px;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.stunt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stunt-card {
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stunt-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: var(--accent);
+}
+
+.stunt-card h3 {
+  margin: 0;
+  font-family: var(--hand);
+  font-size: calc(23px * var(--fs));
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.stunt-card .stunt-type {
+  font-family: var(--hand);
+  font-size: calc(16px * var(--fs));
+  color: var(--accent);
+}
+
+.stunt-card p { margin: 0; }
+.stunt-card .stunt-effect {
+  margin-top: auto;
+  border-top: 1px dashed var(--line);
+  padding-top: 8px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.stunt-card .stunt-effect b { color: var(--ink); }
+
+.stunt-examples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stunt-example {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 16px 18px;
+}
+.stunt-example h3 {
+  margin: 0 0 6px;
+  font-family: var(--hand);
+  font-size: calc(21px * var(--fs));
+  font-weight: 400;
+}
+.stunt-example .aspect-name {
+  display: inline-block;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  padding: 2px 8px;
+  margin-bottom: 8px;
+  font-family: var(--hand);
+  font-size: calc(16px * var(--fs));
+  color: var(--accent);
+}
+.stunt-example p { margin: 0; font-size: 0.95rem; }
+
+.bad-stunts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.bad-stunt {
+  border: 1px solid #d8b4aa;
+  background: #f8e8e2;
+  padding: 16px 18px;
+}
+.bad-stunt h3 {
+  margin: 0 0 6px;
+  font-family: var(--hand);
+  font-size: calc(20px * var(--fs));
+  font-weight: 400;
+  color: var(--accent-dark, #7d2b21);
+}
+.bad-stunt p { margin: 0; }
+.bad-stunt .fix {
+  display: block;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #d8b4aa;
+  font-size: 0.9rem;
+  color: var(--muted);
+  visibility: hidden;
+}
+
+.stunt-count {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper-2);
+}
+
+.stunt-count .count-label {
+  color: var(--muted);
+  font-family: var(--hand);
+  font-size: calc(12px * var(--fs));
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.count-ctrl {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.count-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--hand);
+  font-size: calc(20px * var(--fs));
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+}
+
+.count-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.count-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.count-btn:disabled {
+  opacity: .4;
+  cursor: default;
+}
+
+.count-num {
+  min-width: 30px;
+  color: var(--ink);
+  font-family: var(--hand);
+  font-size: calc(28px * var(--fs));
+  line-height: 1;
+  text-align: center;
+}
+
+.count-unit {
+  color: var(--muted);
+  font-family: var(--hand);
+  font-size: calc(16px * var(--fs));
+}
+
+.count-refresh {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.count-refresh .tag { font-size: .9rem; }
+
+.refresh-tokens {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.refresh-tokens .fate-token {
+  width: 22px;
+  height: 22px;
+  cursor: default;
+}
+
+.refresh-tokens .fate-token::after { inset: 6px; }
+
+.count-refresh b {
+  color: var(--ink);
+  font-family: var(--hand);
+  font-size: calc(20px * var(--fs));
+  font-weight: 400;
+}
+
+.count-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: .85rem;
+  line-height: 1.5;
+}
+
+.count-note b { color: var(--ink); }
+
+@media (max-width: 900px) {
+  .stunt-hero,
+  .stunt-grid,
+  .stunt-examples,
+  .bad-stunts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Воздух между блоками и цитаты ---------- */
+
+.page-section { margin-top: 76px; }
+.diagram { margin-top: 56px; }
+.section-head { margin-bottom: 12px; }
+
+.chapter-quote + .page-section,
+.chapter-quote + .diagram { margin-top: 0; }
+
+.chapter-quote {
+  position: relative;
+  max-width: 760px;
+  margin: 128px auto;
+  padding: 20px 30px 20px 62px;
+  border-left: 2px solid var(--accent-soft);
+  color: var(--muted);
+  font-family: var(--hand);
+  font-size: calc(18px * var(--fs));
+  line-height: 1.45;
+}
+
+.chapter-quote::before {
+  content: "“";
+  position: absolute;
+  top: 2px;
+  left: 16px;
+  color: var(--accent);
+  font-family: Georgia, serif;
+  font-size: calc(58px * var(--fs));
+  line-height: 1;
+  opacity: .5;
+}
+
+.chapter-quote blockquote { margin: 0; }
+
+/* ---------- 1 · Конструктор узкого бонуса ---------- */
+
+.stunt-builder {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border: 1px dashed var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.stunt-builder .kicker { margin-bottom: 6px; }
+
+.builder-phrase {
+  margin: 0;
+  font-family: var(--hand);
+  font-size: calc(16px * var(--fs));
+  line-height: 1.9;
+  color: var(--ink);
+}
+
+.builder-phrase b { color: var(--accent); font-weight: 600; }
+
+.builder-phrase select {
+  padding: 1px 4px;
+  border: 0;
+  border-bottom: 1px solid var(--accent);
+  border-radius: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.builder-phrase input[type="text"] {
+  padding: 1px 4px;
+  border: 0;
+  border-bottom: 1px solid var(--accent);
+  border-radius: 0;
+  background: transparent;
+  color: var(--accent);
+  font: inherit;
+  font-size: inherit;
+  min-width: 90px;
+  max-width: 100%;
+}
+
+.builder-phrase input[type="text"]::placeholder {
+  color: var(--accent);
+  opacity: .45;
+}
+
+.builder-phrase input[type="text"]:focus {
+  outline: none;
+  border-bottom-color: var(--ink);
+}
+
+.stunt-builder .ui-button { margin-top: 10px; }
+
+/* ---------- Плохие трюки: спойлер ---------- */
+
+.bad-stunt .spoiler {
+  display: block;
+  margin-top: 8px;
+  padding: 1px 5px;
+  border-radius: 6px;
+  background: var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  opacity: .92;
+  transition: color .2s, background .2s, opacity .2s;
+}
+
+.bad-stunt .spoiler:hover { opacity: 1; }
+
+.bad-stunt .spoiler:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.bad-stunt.is-shown .spoiler {
+  background: transparent;
+  color: var(--muted);
+  cursor: default;
+  opacity: 1;
+}
+
+.bad-stunt.is-shown .fix {
+  visibility: visible;
+}
+
+/* ---------- Как придумать: путь от наброска к трюку ---------- */
+
+.path-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.path-btn {
+  padding: 6px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper-2);
+  color: var(--muted);
+  font-family: var(--hand);
+  font-size: calc(14px * var(--fs));
+  line-height: 1.2;
+  cursor: pointer;
+  transition: border-color .15s, background .15s, color .15s;
+}
+
+.path-btn:hover:not(.is-active) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.path-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.path-btn.is-active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.path-stage {
+  min-height: 160px;
+  margin-top: 14px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  font-size: calc(15px * var(--fs));
+  line-height: 1.6;
+}
+
+.path-stage p { margin: 0; }
+
+.path-stage--1 {
+  border: 1.5px dashed #c9bfb2;
+  background: #fbf9f4;
+  color: var(--muted);
+  font-family: var(--hand);
+}
+
+.path-stage--1 b { color: var(--ink); font-weight: 600; }
+
+.path-stage--2 {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.path-stage--2 b { color: var(--accent); font-weight: 600; }
+
+.path-stage--3 {
+  border: 1.5px solid var(--ink);
+  background: var(--paper-2);
+  box-shadow: 4px 4px 0 rgba(33, 27, 22, .08);
+  color: var(--ink);
+}
+
+.path-stage--3 b { color: var(--accent); font-weight: 600; }
+
+.path-stage .path-kicker {
+  color: var(--muted);
+  font-family: var(--hand);
+  font-size: calc(12px * var(--fs));
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.path-stage--2 .path-kicker,
+.path-stage--3 .path-kicker { color: var(--accent); }
+
+.path-actions { margin-top: 10px; }
+
+/* ---------- Адаптивность ---------- */
+
+@media (max-width: 700px) {
+  .chapter-quote {
+    margin: 82px auto;
+    padding: 18px 0 18px 42px;
+  }
+
+  .chapter-quote::before { left: 4px; }
+
+  .path-stage { min-height: 180px; }
+}

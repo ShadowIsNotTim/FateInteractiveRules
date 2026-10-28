@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Аспекты и жетоны — Как играть в Fate</title>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/diagrams.css">
+<link rel="stylesheet" href="./04-aspects.css">
+<script src="../assets/js/nav-data.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="./04-aspects.js" defer></script>
+</head>
+<body data-root="../" data-page="aspects">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<div class="site-shell">
+  <aside class="site-sidebar" id="site-sidebar" aria-label="Навигация по руководству"></aside>
+
+  <main class="site-main" id="content">
+    <header class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Как играть в Fate</a> <span class="sep">/</span> <span data-current-number>03</span></p>
+      <h1 class="page-title">Аспекты и жетоны</h1>
+      <p class="lead">Про аспекты как кирпичики мироздания.</p>
+    </header>
+
+    <section class="page-section" aria-labelledby="fact-title">
+      <div class="section-head"><h2 id="fact-title">Аспект — это факт, а не бонус</h2></div>
+      <div class="prose">
+        <p>Аспект — короткая фраза, которая описывает важное свойство персонажа, места или ситуации. Аспект - <b>правда</b>: если у тебя аспект «Взломщик», ты умеешь вскрывать замки.</p>
+        <p>Аспект не «+2 на всё». Это утверждение о мире. «Долг старому должнику» значит, что должник существует, помнит о долге и может появиться в сцене. «Язык без костей» значит, что ты умеешь говорить — и иногда не можешь промолчать.</p>
+        <p>Поэтому аспект может <b>разрешать</b> действие: «У меня есть связи в порту» — значит, у тебя есть знакомый в порту. И может <b>запрещать</b>: «У тебя сломана рука» — значит, тонкая работа без объяснения не выйдет.</p>
+      </div>
+    </section>
+
+    <section class="diagram" id="v8">
+      <div class="d-head"><span class="d-badge">V8</span><h2 class="d-title">Аспект как рычаг</h2></div>
+      <p class="d-kicker">Один и тот же аспект может работать <b>за тебя</b> и <b>против тебя</b>. В этом весь Fate: аспект — не бонус, а рычаг.</p>
+
+      <div class="lever" id="lever">
+        <div class="lever-side" data-side="invoke" role="button" tabindex="0" aria-pressed="false" aria-label="Призыв: аспект за тебя">
+          <span class="tag tag--accent">за тебя</span>
+          <h3>Invoke · Призыв</h3>
+          <p>Потрать жетон → <b>+2</b> или <b>переброс</b>. Жетон уходит мастеру.</p>
+        </div>
+        <div class="lever-arrow" id="lever-arrow-l" aria-hidden="true">←</div>
+        <div class="lever-center">
+          <div class="kicker">аспект Ворона</div>
+          <div class="sticker" id="lever-sticker">Язык без костей</div>
+          <span class="tag">один аспект — две стороны</span>
+        </div>
+        <div class="lever-arrow" id="lever-arrow-r" aria-hidden="true">→</div>
+        <div class="lever-side" data-side="compel" role="button" tabindex="0" aria-pressed="false" aria-label="Навяз: аспект против тебя">
+          <span class="tag tag--accent">против тебя</span>
+          <h3>Compel · Навяз</h3>
+          <p>Мастер давит на аспект → <b>осложнение</b> → ты получаешь жетон.</p>
+        </div>
+      </div>
+      <p class="lever-feedback" id="lever-feedback" aria-live="polite">Кликни по стороне — увидишь, как один и тот же аспект работает за тебя и против тебя.</p>
+      <p class="lever-goto" id="lever-goto"><a class="lever-link" href="05-compels.html">Всё про навязы →</a></p>
+
+      <div class="free-invoke"><b>Бесплатный призыв</b><span>Есть также аспекты с бесплатным призывом. При призыве такого можно потратить бесплатный призыв вместо жетона. Он появляется от успеха со стилем или создания преимущества; складывается с другими призывами.</span></div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Один и тот же аспект может быть и преимуществом, и проблемой. «Язык без костей» помогает уговорить — и втягивает в неприятности, когда промолчать не можешь.</blockquote>
+    </figure>
+
+    <section class="page-section" aria-labelledby="invoke-title">
+      <div class="section-head"><h2 id="invoke-title">Как призывать</h2></div>
+      <div class="prose">
+        <p>Опиши, <b>как</b> аспект помогает в этой ситуации. Потрать один жетон. Выбери: <b>+2</b> к результату или <b>переброс</b> всех четырёх кубиков. Жетон уходит мастеру.</p>
+        <p>Можно призвать несколько аспектов, если они действительно подходят. Каждый стоит жетон, если он не бесплатный. Бесплатные призывы складываются и не тратят ресурс (в данной демонстрации их нет но они будут на игре).</p>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Призыв без объяснения — не призыв. Мало сказать «у меня есть аспект»: нужно показать, что именно он меняет в сцене.</blockquote>
+    </figure>
+
+    <section class="diagram" id="v3-2">
+      <div class="d-head"><span class="d-badge">V3.2</span><h2 class="d-title">Призыв в действии: бросок с аспектами</h2></div>
+      <p class="d-kicker">Сначала <b>перетащи аспект</b> в зону броска. Если он подходит по смыслу — призови его жетоном. Если нет — увидишь, почему. Аспект — не просто «+2».</p>
+
+      <div class="drag-roll">
+        <div class="drag-pool">
+          <div class="kicker">Аспекты Ворона</div>
+          <div class="aspect-cards" id="adv-aspect-cards">
+            <div class="aspect-card" draggable="true" data-aspect="vzlomshchik" data-name="Взломщик" data-fits="Взлом" data-reason="Взломщик — про замки, а не про разговор.">Взломщик</div>
+            <div class="aspect-card" draggable="true" data-aspect="tihie-ruki" data-name="Тихие руки" data-fits="Взлом" data-reason="Тихие руки помогают со взломом, но не с разговором.">Тихие руки</div>
+            <div class="aspect-card" draggable="true" data-aspect="yazyk" data-name="Язык без костей" data-fits="Общение" data-reason="Это про разговор, а не про замок.">Язык без костей</div>
+            <div class="aspect-card" draggable="true" data-aspect="dolg" data-name="Долг старому должнику" data-fits="Связи" data-reason="Долг работает через связи, а не через взлом.">Долг старому должнику</div>
+            <div class="aspect-card" draggable="true" data-aspect="trus" data-name="Трус" data-fits="" data-reason="Трус — это аспект для навязя, а не для призыва. Он не даёт +2 к броску.">Трус</div>
+          </div>
+          <div class="kicker">Жетоны</div>
+          <div class="token-pool" id="adv-token-pool" aria-label="Жетоны судьбы"></div>
+          <p class="small muted" style="margin:6px 0 0">Перетащи жетон на активный аспект. Можно и просто кликнуть по аспекту.</p>
+        </div>
+
+        <div class="aspect-drop" id="adv-drop">
+          <div class="drop-hint" id="adv-drop-hint">Перетащи сюда аспект, который подходит к выбранному навыку. Или выбери аспект и кликни здесь.</div>
+          <div class="active-aspects" id="adv-active-aspects"></div>
+          <div class="aspect-feedback" id="adv-feedback" hidden></div>
+        </div>
+      </div>
+
+      <div class="formula" id="adv-calc">
+        <div class="f-term">
+          <div class="f-label">Кубики</div>
+          <div class="f-value" id="adv-dice-total">+1</div>
+          <div class="dice-row" id="adv-dice-row" aria-label="Четыре кубика"></div>
+          <button class="roll" id="adv-roll" type="button">Бросить 4dF</button>
+        </div>
+        <div class="f-op">+</div>
+        <div class="f-term">
+          <div class="f-label">Навык</div>
+          <div class="f-value">
+            <select class="inline-select" id="adv-skill" aria-label="Навык">
+              <option value="4" data-name="Взлом" selected>Взлом +4</option>
+              <option value="2" data-name="Общение">Общение +2</option>
+              <option value="1" data-name="Связи">Связи +1</option>
+              <option value="1" data-name="Драка">Драка +1</option>
+            </select>
+          </div>
+          <div class="f-sub">выбери, что делаешь</div>
+        </div>
+        <div class="f-op">+</div>
+        <div class="f-term">
+          <div class="f-label">Аспекты</div>
+          <div class="f-value" id="adv-aspect-total">+0</div>
+          <div class="f-sub" id="adv-aspect-hint">перетащи аспект</div>
+        </div>
+        <div class="f-op">=</div>
+        <div class="f-term f-result">
+          <div class="f-label">Результат</div>
+          <div class="f-value is-tie" id="adv-result-total">+5</div>
+          <div class="f-sub">сложность мастера <b class="static-diff">+5</b> → <span id="adv-outcome" class="is-tie">ничья</span></div>
+        </div>
+      </div>
+
+      <div class="example">
+        <span class="label">Сейчас</span>
+        <span id="adv-live-formula">4dF (+1) + навык +4 + аспекты +0 = +5</span>
+        <span id="adv-live-outcome" class="is-tie">против +5 → ничья</span>
+      </div>
+
+      <div class="toolbar" style="margin-top:14px">
+        <button class="ui-button" id="adv-reset" type="button">Сброс</button>
+        <span class="muted">навык меняет, какие аспекты подходят</span>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Аспект, который не подходит по смыслу, — не повод для призыва, а повод для другого хода.</blockquote>
+    </figure>
+
+    <figure class="chapter-quote">
+      <blockquote>Самые дешёвые очки — бесплатные призывы. Они не тратят жетон и почти всегда важнее ещё одного +2 за жетон.</blockquote>
+    </figure>
+
+    <!-- <div class="cheat-ref"><b>На шпаргалке:</b> коррекция броска — «+2», «переброс», «free invoke», «трюк».</div> -->
+
+    <nav class="page-pager" id="page-pager" aria-label="Страницы руководства"></nav>
+  </main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+</body>
+</html>

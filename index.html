@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Как играть в Fate — интерактивное руководство</title>
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="home.css">
+<script src="assets/js/nav-data.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+</head>
+<body data-root="./" data-page="home">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<div class="site-shell">
+  <aside class="site-sidebar" id="site-sidebar" aria-label="Навигация по руководству"></aside>
+
+  <main class="site-main" id="content">
+    <section class="cover-hero" aria-labelledby="cover-title">
+      <div>
+        <div class="cover-kicker">
+          <span class="tag tag--accent">альфа 0.1</span>
+          <span class="tag">Fate · гибрид Core / Condensed</span>
+          <span class="tag tag--olive">с любовью к игрокам</span>
+        </div>
+
+        <h1 class="cover-title" id="cover-title">
+          <span>Как играть</span>
+          <span>в Fate</span>
+        </h1>
+
+        <p class="cover-sub">Руководство для новичка: как сесть за стол, понять ход игры и провести первую сцену. <b>Не нужно помнить всё — нужно знать, куда смотреть.</b></p>
+
+        <div class="cover-actions">
+          <a class="ui-button ui-button--primary" href="pages/02-story.html">Сначала история →</a>
+          <!-- <a class="ui-button" href="pages/10-cheatsheet.html">Открыть шпаргалку</a> -->
+        </div>
+      </div>
+
+      <div class="cover-dice" aria-hidden="true">
+        <div class="die-big die-big--plus"><b>+</b><span>помогает</span></div>
+        <div class="die-big die-big--zero"><b>0</b><span>ничего</span></div>
+        <div class="die-big die-big--minus"><b>−</b><span>мешает</span></div>
+        <div class="die-big die-big--plus"><b>+</b><span>4dF</span></div>
+      </div>
+    </section>
+
+    <section class="page-section page-section--tight" aria-labelledby="start-title">
+      <div class="section-head">
+        <h2 id="start-title">Три входа</h2>
+        <span class="kicker">с чего начать</span>
+      </div>
+
+      <div class="cover-route">
+        <a class="mini-card mini-card--accent" href="pages/02-story.html">
+          <span class="num">01</span>
+          <h3>Я только зашел куда жмать?</h3>
+          <p>Разговор, ставка и первая сцена — без кубиков. С этого начинается игра.</p>
+          <span class="go">первая глава →</span>
+        </a>
+        <a class="mini-card mini-card--warm" href="pages/03-checks.html">
+          <span class="num">02</span>
+          <h3>Го сразу к проверке</h3>
+          <p>4dF + навык, сложность и четыре исхода. С этого начинается механика.</p>
+          <span class="go">попробовать бросок →</span>
+        </a>
+        <a class="mini-card mini-card--olive" href="pages/10-cheatsheet.html">
+          <span class="num">08</span>
+          <h3>Сам все знаю - чем удивишь?</h3>
+          <p>Одна шпаргалка со всем: действие, исход, коррекция броска, свободные ходы.</p>
+          <span class="go">держать под рукой →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="about-title">
+      <div class="section-head">
+        <h2 id="about-title">Что это за руководство</h2>
+      </div>
+
+      <div class="prose">
+        <p>Это не строгий Fate Core и не «Fate Condensed один в один», а гибрид. В спорных местах опираемся на Core, но не называем текст официальной редакцией. Задача — научить играть, а не пересказать книгу.</p>
+        <p>Сквозной пример — вымышленный <b>Ворон</b>, вор с принципами, и безымянный <b>хозяин таверны «Три пера»</b>. Одна и та же сцена проходит через проверки, аспекты, навязы и конфликт — так видно, как механика меняет историю.</p>
+      </div>
+
+      <!-- <div class="cover-strip" aria-label="Маршрут руководства">
+        <span class="tag">Словеска</span>
+        <span class="tag">→ Проверки</span>
+        <span class="tag">→ Аспекты</span>
+        <span class="tag">→ Навязы</span>
+        <span class="tag">→ Конфликт</span>
+        <span class="tag">→ Трюки</span>
+        <span class="tag tag--accent">→ история продолжается</span>
+      </div> -->
+
+      <p class="note note--olive"><b>Всё интерактивно.</b> На игре знания не помогут - никто не лезет в рублук смотреть "как там аспекты навязвать?". Тут закрепляются навыки которыми управляется игровая вселенная.</p>
+    </section>
+
+    <section class="page-section" aria-labelledby="route-title">
+      <div class="section-head">
+        <h2 id="route-title">Почему именно так</h2>
+        <span class="kicker">логика порядка</span>
+      </div>
+      <div class="prose">
+        <p><b>Сначала история.</b> Читатель уже умеет разговаривать — это и есть основа. С них исторически начинались настольно ролевые игры.</p>
+        <p><b>Потом проверки и навыки.</b> Появляется математика: 4dF, распределение. Сразу после — череда проверок, чтобы не казалось, что один бросок решает всю сцену.</p>
+        <p><b>Аспекты и навязы.</b> Главная особенность Fate: аспект — двусторонний рычаг. Он помогает тебе и может втянуть в неприятности.</p>
+        <p><b>Конфликт — только когда время стало важным.</b> Четыре действия и матрица исходов не нужны в спокойной сцене. В свободной сцене хватает преодоления и создания преимущества.</p>
+        <p><b>Трюки — последний штрих.</b> Исключения из правил, которые делают персонажа уникальным. Сначала человек, потом набор бонусов.</p>
+      </div>
+      <p class="note note--olive"><b>Теория ложится слоями.</b> Как пирог. На любом из этих этапов можно начать играть хоть правила и не будут до конца подходить. Каждая механика для чего-то нужна.</p>
+      <!-- <p class="note"><b>Частая ошибка:</b> начинать с конфликта и матрицы. Тогда правила выглядят как шахматы, а история исчезает. Иди по маршруту сверху вниз.</p> -->
+    </section>
+
+    <nav class="page-pager" id="page-pager" aria-label="Страницы руководства"></nav>
+  </main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+</body>
+</html>

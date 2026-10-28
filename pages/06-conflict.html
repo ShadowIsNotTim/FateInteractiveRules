@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Конфликт — Как играть в Fate</title>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/diagrams.css">
+<link rel="stylesheet" href="./06-conflict.css">
+<script src="../assets/js/nav-data.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="./06-conflict.js" defer></script>
+</head>
+<body data-root="../" data-page="conflict">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<div class="site-shell">
+  <aside class="site-sidebar" id="site-sidebar" aria-label="Навигация по руководству"></aside>
+
+  <main class="site-main" id="content">
+    <header class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Как играть в Fate</a> <span class="sep">/</span> <span data-current-number>05</span></p>
+      <h1 class="page-title">Конфликт</h1>
+      <p class="lead">О том как набить морду этому негодяю!</p>
+    </header>
+
+    <section class="page-section" aria-labelledby="when-title">
+      <div class="section-head"><h2 id="when-title">Когда это конфликт</h2></div>
+      <div class="compare" id="scene-mode">
+        <div class="compare-card" data-mode="free" role="button" tabindex="0" aria-pressed="true" aria-label="Свободная сцена">
+          <h3>Свободная сцена</h3>
+          <p class="compare-sub">урона нет · ходы не считаем</p>
+        </div>
+        <div class="compare-card" data-mode="conflict" role="button" tabindex="0" aria-pressed="false" aria-label="Конфликт">
+          <h3>Конфликт</h3>
+          <p class="compare-sub">урон есть · есть порядок ходов</p>
+        </div>
+      </div>
+      <p class="mode-line" id="mode-line" aria-live="polite">Время не важно: ходы не считаем. Достаточно преодоления и создания преимущества.</p>
+    </section>
+
+    <!-- <figure class="chapter-quote">
+      <blockquote>Не превращай конфликт в шахматы: порядок ходов нужен, чтобы у всех была возможность влиять на сцену, а не чтобы считать клетки.</blockquote>
+    </figure> -->
+
+    <section class="diagram" id="v6">
+      <div class="d-head"><span class="d-badge">V6</span><h2 class="d-title">Четыре действия</h2></div>
+      <p class="d-kicker">Это раздел <b>конфликта</b>. В свободной сцене чаще всего достаточно преодоления и создания преимущества; атака и защита включаются, когда мирным путем решение не достигли.</p>
+      <p class="d-kicker">Стресс - это живучесть персонажа, как hp в играх. Он бывает ментальный и физический.</p>
+
+      <div class="actions">
+        <div class="action-card" data-action="overcome">
+          <svg class="action-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 32h32"/><path d="M11 32V20h4v12"/><path d="M26 32V20h4v12"/><path d="M5 14c6-7 11 6 17 0l4-4"/><path d="M26 6l4 4-4 4"/></svg>
+          <h3>Преодоление</h3>
+          <p>Убрать препятствие.</p>
+        </div>
+        <div class="action-card" data-action="advantage">
+          <svg class="action-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 32h32"/><path d="M20 28L30 10"/><path d="M8 28L30 10"/><circle cx="31" cy="9" r="3"/><path d="M16 28h12"/></svg>
+          <h3>Создание преимущества</h3>
+          <p>Сделать аспект или буст.</p>
+        </div>
+        <div class="action-card" data-action="attack">
+          <svg class="action-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 31l5-1L31 13l-4-4L10 26z"/><path d="M18 15l7 7"/><path d="M8 32l4-1"/><path d="M27 8l5 5"/></svg>
+          <h3>Атака</h3>
+          <p>Нанести стресс.</p>
+        </div>
+        <div class="action-card" data-action="defend">
+          <svg class="action-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 4l13 5v9c0 8-6 14-13 18-7-4-13-10-13-18V9z"/><path d="M14 20l4 4 8-9"/></svg>
+          <h3>Защита</h3>
+          <p>Ответить на атаку.</p>
+        </div>
+      </div>
+
+      <p class="action-detail" id="action-detail" aria-live="polite">Кликни по действию — увидишь, когда его использовать и что оно даёт.</p>
+
+      <div class="action-flow">
+        <span>Хочу изменить мир → преимущество</span>
+        <span>Хочу убрать препятствие → преодоление</span>
+        <span>Хочу навредить → атака</span>
+        <span>Меня атакуют → защита</span>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Это работает в конфликте. В свободной сцене — сначала история, потом два базовых действия: преодоление и создание преимущества.</blockquote>
+    </figure>
+
+    <section class="diagram" id="v7">
+      <div class="d-head"><span class="d-badge">V7</span><h2 class="d-title">Исходы броска</h2></div>
+      <p class="d-kicker">Матрица <b>для конфликта</b>: строки — четыре действия, столбцы — провал, ничья, успех, успех со стилем. В свободной сцене она целиком не нужна.</p>
+
+      <div class="legend-dots">
+        <span><i style="background:#f1ece5"></i>провал</span>
+        <span><i style="background:#eee2d9"></i>ничья</span>
+        <span><i style="background:#efd6cc"></i>успех</span>
+        <span><i style="background:#e3b8aa"></i>успех со стилем</span>
+        <span class="muted">чем теплее — тем лучше исход</span>
+      </div>
+
+      <div class="table-wrap">
+        <table class="matrix">
+          <thead>
+            <tr><th>Действие</th><th>Провал</th><th>Ничья</th><th>Успех</th><th>Успех со стилем</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Преодоление</td>
+              <td>Не прошёл; мастер предлагает цену</td>
+              <td>Успех с ценой</td>
+              <td class="ok">Прошёл</td>
+              <td class="ok">Прошёл + буст</td>
+            </tr>
+            <tr>
+              <td>Создание преимущества</td>
+              <td>Аспекта нет; мастер предлагает цену</td>
+              <td>Буст вместо аспекта</td>
+              <td class="ok">Аспект + 1 бесплатный призыв</td>
+              <td class="ok">Аспект + 2 бесплатных призыва или буст</td>
+            </tr>
+            <tr>
+              <td>Атака</td>
+              <td>Нет стресса; мастер может предложить цену</td>
+              <td>Буст вместо стресса</td>
+              <td class="ok">Стресс = разница</td>
+              <td class="ok">Стресс + буст</td>
+            </tr>
+            <tr>
+              <td>Защита</td>
+              <td class="bad">Стресс = разница</td>
+              <td>Буст атакующему</td>
+              <td class="ok">Нет стресса</td>
+              <td class="ok">Нет стресса + буст</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Если не понравился бросок, результат можно улучшить с помощью аспректа (см прошлые главы).</blockquote>
+    </figure>
+
+    <section class="diagram" id="v11">
+      <div class="d-head"><span class="d-badge">V11</span><h2 class="d-title">Раунд конфликта</h2></div>
+      <p class="d-kicker">Один обмен: кто ходит, перемещение <span class="muted">(по желанию)</span>, что делает, чем отвечают, что получается и кому передают ход.</p>
+
+      <div class="timeline" id="round-steps">
+        <div class="tl-step" data-step="1" role="button" tabindex="0" aria-label="Шаг 1"><span class="tl-num">1</span><h3>Кто ходит первым?</h3></div>
+        <div class="tl-arrow" aria-hidden="true">→</div>
+        <div class="tl-step tl-step--bonus" data-step="2a" role="button" tabindex="0" aria-label="Бонус: перемещение"><span class="tl-num">*</span><h3>Перемещение</h3></div>
+        <div class="tl-arrow" aria-hidden="true">→</div>
+        <div class="tl-step" data-step="2" role="button" tabindex="0" aria-label="Шаг 2"><span class="tl-num">2</span><h3>Действие</h3></div>
+        <div class="tl-arrow" aria-hidden="true">→</div>
+        <div class="tl-step" data-step="3" role="button" tabindex="0" aria-label="Шаг 3"><span class="tl-num">3</span><h3>Защита (противник)</h3></div>
+        <div class="tl-arrow" aria-hidden="true">→</div>
+        <div class="tl-step" data-step="4" role="button" tabindex="0" aria-label="Шаг 4"><span class="tl-num">4</span><h3>Результат</h3></div>
+        <div class="tl-arrow" aria-hidden="true">→</div>
+        <div class="tl-step" data-step="5" role="button" tabindex="0" aria-label="Шаг 5"><span class="tl-num">5</span><h3>Передача хода</h3></div>
+      </div>
+      <p class="tl-detail" id="round-detail" aria-live="polite">Нажми на шаг — увидишь, что происходит.</p>
+
+      <div class="tokens"><span>Порядок ходов:</span><span class="token"><i></i>Ворон</span><span class="token"><i></i>Союзник</span><span class="token"><i></i>Наёмник</span><span class="muted">не по кругу: следующий — кто ещё не ходил</span></div>
+      <div class="plaque">В конфликте разговор тоже должен быть действием.</div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Инициатива не кружит по списку: внутри раунда каждый действует один раз, а следующий ход передают тому, кто ещё не ходил. Все сходили — новый раунд.</blockquote>
+    </figure>
+
+    <section class="diagram" id="v11-1">
+      <div class="d-head"><span class="d-badge">V11.1</span><h2 class="d-title">Конфликт в динамике</h2></div>
+      <p class="d-kicker">Инициатива не кружит по кругу: внутри раунда каждый действует один раз, а следующий ход достаётся тому, кто ещё не ходил.</p>
+
+      <div class="initiative-board">
+        <figure class="initiative-wheel" id="initiative-wheel">
+          <svg viewBox="0 0 360 310" role="img" aria-label="Инициатива: Ворон, Союзник, Наёмник">
+            <circle cx="180" cy="155" r="102" fill="none" stroke="#ddd5c9" stroke-width="2" stroke-dasharray="4 8"/>
+            <text x="180" y="150" class="wheel-center" id="wheel-round">Раунд 1</text>
+            <text x="180" y="171" class="wheel-sub">1 действие за ход · не по кругу</text>
+            <g class="init-node" data-who="raven">
+              <circle cx="180" cy="53" r="38"/>
+              <text x="180" y="50" class="n-name">Ворон</text>
+              <text x="180" y="68" class="n-role">игрок</text>
+            </g>
+            <g class="init-node" data-who="ally">
+              <circle cx="268" cy="206" r="38"/>
+              <text x="268" y="203" class="n-name">Союзник</text>
+              <text x="268" y="221" class="n-role">союзник</text>
+            </g>
+            <g class="init-node" data-who="enemy">
+              <circle cx="92" cy="206" r="38"/>
+              <text x="92" y="203" class="n-name">Наёмник</text>
+              <text x="92" y="221" class="n-role">противник</text>
+            </g>
+          </svg>
+        </figure>
+        <div class="turn-rules">
+          <div class="turn-rule"><b>1 действие</b><span>атака <i>или</i> создание преимущества. Не оба.</span></div>
+          <div class="turn-rule"><b>Не по кругу</b><span>следующий ход — тому, кто ещё не ходил в этом раунде.</span></div>
+          <div class="turn-rule"><b>1 раз за раунд</b><span>каждый действует один раз; все сходили — новый раунд.</span></div>
+          <div class="turn-rule"><b>Защита</b><span>реакция; своё действие не тратит.</span></div>
+          <p class="turn-line">Нажми на персонажа, чтобы дать ему ход: <b>дальше действует тот, кто ещё не ходил</b>.</p>
+        </div>
+      </div>
+
+      <div class="conflict">
+        <div>
+          <div class="combatants">
+            <div class="combatant" data-who="raven" id="combat-raven">
+              <div class="combatant-head"><span class="kicker">игрок</span><h4>Ворон</h4></div>
+              <div class="stress-mini"><span>стресс</span><span class="stress-pip">1</span><span class="stress-pip">2</span><span class="stress-pip">3</span><span class="stress-pip">4*</span></div>
+              <div class="conseq-mini" id="raven-conseq">Последствий нет</div>
+              <div class="aspect-mini">Язык без костей · Взломщик</div>
+            </div>
+            <div class="combatant" data-who="ally" id="combat-ally">
+              <div class="combatant-head"><span class="kicker">союзник</span><h4>Союзник</h4></div>
+              <div class="stress-mini"><span>стресс</span><span class="stress-pip">1</span><span class="stress-pip">2</span></div>
+              <div class="conseq-mini">Последствий нет</div>
+              <div class="aspect-mini">Прикрывает спину</div>
+            </div>
+            <div class="combatant" data-who="enemy" id="combat-enemy">
+              <div class="combatant-head"><span class="kicker">противник</span><h4>Наёмник</h4></div>
+              <div class="stress-mini"><span>стресс</span><span class="stress-pip">1</span><span class="stress-pip">2</span><span class="stress-pip">3</span></div>
+              <div class="conseq-mini" id="enemy-conseq">Последствий нет</div>
+              <div class="aspect-mini">«Мне заплатили»</div>
+            </div>
+          </div>
+          <div class="scene-aspects" id="conflict-aspects">
+            <span class="kicker">аспекты сцены</span>
+            <span class="scene-aspect" id="scene-aspect-distracted" hidden><span class="scene-aspect-name" id="scene-aspect-name">Враги отвлеклись</span> <span class="tag tag--olive">free</span></span>
+            <span class="muted small" id="scene-aspect-empty">пока нет</span>
+          </div>
+        </div>
+        <div>
+          <div class="turn-picker">
+            <div class="kicker" id="pick-kicker">Кто ходит следующим?</div>
+            <div class="turn-chips" id="turn-chips">
+              <button class="turn-chip" type="button" data-who="raven">Ворон</button>
+              <button class="turn-chip" type="button" data-who="ally">Союзник</button>
+              <button class="turn-chip" type="button" data-who="enemy">Наёмник</button>
+            </div>
+          </div>
+          <div class="conflict-log" id="turn-log">
+            <p class="muted small" id="turn-empty" style="margin:0">Кликни по персонажу — он сделает свой ход.</p>
+          </div>
+          <div class="conflict-controls">
+            <button class="ui-button" id="round-next" type="button" hidden>Новый раунд</button>
+            <button class="ui-button" id="conflict-reset" type="button">Сброс</button>
+            <span class="tag" id="conflict-round">Раунд 1</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Один ход — одно действие: атака и преимущество не складываются. Защита — реакция и своё действие не тратит.</blockquote>
+    </figure>
+
+    <section class="diagram" id="v12">
+      <div class="d-head"><span class="d-badge">V12</span><h2 class="d-title">Стресс и последствия</h2></div>
+      <p class="d-kicker">Стресс — как хиты в играх. Это способ <b>избежать последствий</b>. Стресс обновляется в начале каждой сцены. Удар фиксирован: <b>7 сдвигов</b> — покрой его клетками и последствиями.</p>
+
+      <div class="stress-layout">
+        <div>
+          <div class="track-row"><span class="stress-label">Физический стресс <span class="muted">(Телосложение)</span></span>
+            <button class="stress-box" type="button" data-value="1">1</button>
+            <button class="stress-box" type="button" data-value="2">2</button>
+            <button class="stress-box" type="button" data-value="3">3</button>
+            <button class="stress-box is-ghost" type="button" data-value="4">4*</button>
+          </div>
+          <p class="stress-star">* четвёртая клетка появляется, если достаточно высокое Телосложение. Ментальный стресс работает так же.</p>
+          <div class="consequences">
+            <div class="cons-row"><div class="cons-label">Лёгкое <b>2</b></div><div class="cons-choice"><label><input class="cons-check" type="checkbox" data-value="2"> взять</label><input class="cons-name" type="text" placeholder="аспект последствия" disabled></div></div>
+            <div class="cons-row"><div class="cons-label">Среднее <b>4</b></div><div class="cons-choice"><label><input class="cons-check" type="checkbox" data-value="4"> взять</label><input class="cons-name" type="text" placeholder="аспект последствия" disabled></div></div>
+            <div class="cons-row"><div class="cons-label">Тяжёлое <b>6</b></div><div class="cons-choice"><label><input class="cons-check" type="checkbox" data-value="6"> взять</label><input class="cons-name" type="text" placeholder="аспект последствия" disabled></div></div>
+          </div>
+          <div class="toolbar" style="margin-top:12px"><button class="ui-button" id="stress-reset" type="button">Сброс</button></div>
+        </div>
+        <div>
+          <div class="cover-status" id="cover-status">Не покрыто: осталось 7</div>
+          <div class="cover-bar"><span id="cover-fill"></span></div>
+          <p class="cover-detail" id="cover-detail">Стресс: 0 · последствия: 0 · всего: 0</p>
+          <div class="hint-list">
+            <div><b>Можно двумя клетками:</b> [3] + [4].</div>
+            <div><b>Можно с излишком:</b> [3] + [1] + [4].</div>
+            <div><b>Можно с последствием:</b> [3] + «Среднее (4)» — и получить аспект.</div>
+          </div>
+          <div class="fork-2">
+            <div class="fork-card fork-card--bad"><h3>Тебя выбили</h3><p><b>taken out.</b> Противник решает, что с тобой случилось. Ты выбываешь из сцены.</p></div>
+            <div class="fork-card fork-card--good"><h3>Уступка</h3><p><b>concession.</b> Сдаёшься до броска, получаешь жетон и сам участвуешь в решении своей судьбы.</p></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+      <p class="d-kicker">Если ты не можешь покрыть сдвиги которые тебе нанесли, ты выбываешь из конфликта. Но до того как бросок совершен и результат очевиден можно выйти из конфликта самостоятельно на хороших условиях.</p>
+
+
+    <figure class="chapter-quote">
+      <blockquote>Стресс снимается в начале сцены — последствия нет. Лёгкое исчезает после отдыха, среднее держится одну, а тяжёлое несколько сцен: иногда лучше взять последствие, чем вылететь.</blockquote>
+    </figure>
+
+    <nav class="page-pager" id="page-pager" aria-label="Страницы руководства"></nav>
+  </main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+</body>
+</html>

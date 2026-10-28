@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Лист персонажа — Как играть в Fate</title>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/diagrams.css">
+<link rel="stylesheet" href="./09-character.css">
+<script src="../assets/js/nav-data.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="./09-character.js" defer></script>
+</head>
+<body data-root="../" data-page="character">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<div class="site-shell">
+  <aside class="site-sidebar" id="site-sidebar" aria-label="Навигация по руководству"></aside>
+
+  <main class="site-main" id="content">
+    <header class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Как играть в Fate</a> <span class="sep">/</span> <span data-current-number>07</span></p>
+      <h1 class="page-title">Лист персонажа</h1>
+      <p class="lead">О том как соединить все на одном листе.</p>
+    </header>
+
+      <p class="">Лист — не экзамен и не таблица бонусов. Это краткая запись о человеке: что его держит, чего он хочет, что умеет и чем отличается от остальных. Начни с характера, а не с цифр.</p>
+
+    <section class="page-section" aria-labelledby="five-title">
+      <div class="section-head"><h2 id="five-title">Пять аспектов</h2></div>
+      <div class="prose">
+        <p><b>Концепция</b> — кто ты одной фразой. <b>Проблема</b> — что тянет тебя вниз. <b>Связь</b> — с кем или чем ты связан. И <b>два свободных аспекта</b> — привычки, репутация, таланты, страхи.</p>
+        <p>Хороший аспект можно призвать <b>за</b> себя и обратить <b>против</b> себя.</p>
+      </div>
+      <div class="aspect-grid" id="aspect-grid">
+        <button class="aspect-pill aspect-pill--accent" type="button" data-a="concept" aria-pressed="false">
+          <span class="ap-name">Концепция</span>
+          <span class="ap-desc">Кто ты одной фразой: направляет решения и обещает конфликты.</span>
+          <span class="ap-example"><b>Пример:</b> «Вор с принципами».</span>
+        </button>
+        <button class="aspect-pill aspect-pill--warm" type="button" data-a="trouble" aria-pressed="false">
+          <span class="ap-name">Проблема</span>
+          <span class="ap-desc">Что тянет тебя вниз и создаёт неприятности.</span>
+          <span class="ap-example"><b>Пример:</b> «Не доверяет тем, кто помогает».</span>
+        </button>
+        <button class="aspect-pill aspect-pill--olive" type="button" data-a="bond" aria-pressed="false">
+          <span class="ap-name">Связь</span>
+          <span class="ap-desc">С кем или чем связан; втягивает в историю других людей.</span>
+          <span class="ap-example"><b>Пример:</b> «Должен старому должнику».</span>
+        </button>
+        <button class="aspect-pill aspect-pill--free" type="button" data-a="free1" aria-pressed="false">
+          <span class="ap-name">Свободный аспект</span>
+          <span class="ap-desc">Привычка, репутация, талант или страх — то, что можно призвать и обратить против себя.</span>
+          <span class="ap-example"><b>Пример:</b> «Три пера — мой второй дом».</span>
+        </button>
+        <button class="aspect-pill aspect-pill--free" type="button" data-a="free2" aria-pressed="false">
+          <span class="ap-name">Свободный аспект</span>
+          <span class="ap-desc">Ещё одна черта, делающая персонажа собой.</span>
+          <span class="ap-example"><b>Пример:</b> «Язык без костей».</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="diagram" id="v15">
+      <div class="d-head"><span class="d-badge">V15</span><h2 class="d-title">Лист персонажа</h2></div>
+      <p class="d-kicker">Что где на листе и что вписывать. Наведи на номер — появится описание. Кнопка убирает подсветку и оставляет чистый лист.</p>
+      <div class="annotation-toolbar">
+        <button class="ui-button" id="sheet-toggle" type="button" aria-pressed="false">Показать чистый лист</button>
+        <span class="muted">наведи на номер или коснись его на телефоне</span>
+      </div>
+      <figure class="annotated" id="sheet-figure">
+        <img src="../assets/img/fate_sheet.png" alt="Лист персонажа Fate Core System с семью подсвеченными зонами">
+        <div class="hotspot" tabindex="0" aria-label="1. Имя и описание: кто ты и как выглядишь" style="left:4.3%;top:13.5%;width:54.0%;height:15.2%"><span class="num">1</span><span class="hotspot-tip"><b>Имя и описание</b><span>Кто ты и как выглядишь. Частая ошибка: биография на полстраницы вместо пары штрихов.</span></span></div>
+        <div class="hotspot" tabindex="0" aria-label="7. Refresh: сколько жетонов в начале сессии" style="left:59.0%;top:17.5%;width:8.5%;height:11.2%"><span class="num">7</span><span class="hotspot-tip hotspot-tip--right"><b>Refresh</b><span>Сколько жетонов в начале сессии (обычно 3). Частая ошибка: потратить refresh на трюки и остаться без жетонов.</span></span></div>
+        <div class="hotspot" tabindex="0" aria-label="2. Концепция, проблема, аспекты" style="left:4.3%;top:31.9%;width:34.0%;height:22.4%"><span class="num">2</span><span class="hotspot-tip"><b>Концепция, проблема, аспекты</b><span>Пять аспектов: концепция, проблема, связь и два свободных. Частая ошибка: аспекты-«ни о чём», которые не за что зацепить.</span></span></div>
+        <div class="hotspot" tabindex="0" aria-label="3. Навыки: пирамида 1/2/3/4" style="left:40.5%;top:31.9%;width:54.8%;height:22.4%"><span class="num">3</span><span class="hotspot-tip"><b>Навыки</b><span>Пирамида 1/2/3/4, 10 слотов. Частая ошибка: брать +5 на старте — его нет.</span></span></div>
+        <div class="hotspot" tabindex="0" aria-label="4. Трюки" style="left:49.8%;top:57.6%;width:45.5%;height:19.2%"><span class="num">4</span><span class="hotspot-tip"><b>Трюки</b><span>Три бесплатных; каждый следующий −1 refresh. Частая ошибка: трюк, который просто даёт +2 без условия.</span></span></div>
+        <div class="hotspot" tabindex="0" aria-label="5. Стресс" style="left:4.3%;top:79.9%;width:23.6%;height:14.7%"><span class="num">5</span><span class="hotspot-tip hotspot-tip--above"><b>Стресс</b><span>Клетки 1/2/3 (четвёртая — при высоком Телосложении или Воле). Частая ошибка: считать стресс хитами.</span></span></div>
+        <div class="hotspot" tabindex="0" aria-label="6. Последствия" style="left:29.7%;top:79.9%;width:65.6%;height:14.4%"><span class="num">6</span><span class="hotspot-tip hotspot-tip--above"><b>Последствия</b><span>Лёгкое 2, среднее 4, тяжёлое 6. Это аспекты. Частая ошибка: забывать, что они работают против тебя.</span></span></div>
+      </figure>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>На старте максимум +4. Ряд +5 на листе — задел на развитие, а не стартовая характеристика: мы работаем с пирамидой 1/2/3/4.</blockquote>
+    </figure>
+
+    
+
+    <section class="diagram" id="v17">
+      <div class="d-head"><span class="d-badge">V17</span><h2 class="d-title">Создание персонажа</h2></div>
+      <p class="d-kicker">Шесть шагов от концепции до refresh. У каждого шага — пример Ворона и подпись «что записать на лист».</p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-card"><h3>Концепция</h3><p>Кто ты одной фразой.</p><div class="flow-example"><b>Ворон:</b> вор с принципами, который ищет информацию.<br><b>Записать:</b> «Вор с принципами».</div></div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-card"><h3>Проблема</h3><p>Что тебя тянет вниз и создаёт неприятности.</p><div class="flow-example"><b>Ворон:</b> не доверяет тем, кто помогает.<br><b>Записать:</b> «Не доверяет тем, кто помогает».</div></div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-card"><h3>Связь</h3><p>С кем ты связан и почему это важно.</p><div class="flow-example"><b>Ворон:</b> должен старому должнику.<br><b>Записать:</b> «Должен старому должнику».</div></div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-card"><h3>Два свободных аспекта</h3><p>Чем ещё ты интересен: привычки, репутация, таланты.</p><div class="flow-example"><b>Ворон:</b> «Три пера» — мой второй дом; «Язык без костей».<br><b>Записать:</b> два аспекта.</div></div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">5</div>
+          <div class="flow-card"><h3>Навыки</h3><p>Пирамида 1/2/3/4: 1 × +4, 2 × +3, 3 × +2, 4 × +1.</p><div class="flow-example"><b>Ворон:</b> Взлом +4, Скрытность +3, Атлетика +3…<br><b>Записать:</b> 10 навыков.</div><p class="flow-link-row"><a class="flow-link" href="03-checks.html">Пирамида →</a></p></div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">6</div>
+          <div class="flow-card"><h3>Трюки и refresh</h3><p>Три бесплатных трюка; каждый следующий стоит 1 refresh.</p><div class="flow-example"><b>Ворон:</b> «Тень в толпе»; refresh 3.<br><b>Записать:</b> 3 трюка, refresh 3.</div><p class="flow-link-row"><a class="flow-link" href="07-stunts.html">Трюки и refresh →</a></p></div>
+        </div>
+      </div>
+      <p class="note"><b>Не начинай с механики.</b> Сначала придумай человека, потом подбирай навыки и трюки под него. Иначе получится набор бонусов без характера.</p>
+    </section>
+
+    <nav class="page-pager" id="page-pager" aria-label="Страницы руководства"></nav>
+  </main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* ============================================================
+   Страница «Домашние правила»
+   Пустой шаблон с большим полем под договорённости.
+   ============================================================ */
+
+.home-blank {
+  min-height: 480px;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1.5px dashed #c9bfb2;
+  border-radius: 12px;
+  background-color: #fbf9f4;
+  background-image: radial-gradient(#e5dccf 1px, transparent 1px);
+  background-size: 22px 22px;
+  text-align: center;
+}
+
+.blank-hint {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--hand);
+  font-size: calc(18px * var(--fs));
+}
+
+.blank-ask {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--hand);
+  font-size: calc(22px * var(--fs));
+}
+
+.blank-ask b { font-weight: 400; }
+
+@media (max-width: 700px) {
+  .home-blank { min-height: 360px; }
+}

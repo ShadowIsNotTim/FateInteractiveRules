@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Трюки — Как играть в Fate</title>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/diagrams.css">
+<link rel="stylesheet" href="./07-stunts.css">
+<script src="../assets/js/nav-data.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="./07-stunts.js" defer></script>
+</head>
+<body data-root="../" data-page="stunts">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<div class="site-shell">
+  <aside class="site-sidebar" id="site-sidebar" aria-label="Навигация по руководству"></aside>
+
+  <main class="site-main" id="content">
+    <header class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Как играть в Fate</a> <span class="sep">/</span> <span data-current-number>06</span></p>
+      <h1 class="page-title">Трюки</h1>
+      <!-- <p class="lead">Трюк — это <b>исключение из правил</b>, которое делает персонажа уникальным. Не «ещё один +2», а разрешение сделать то, чего обычно нельзя, или узкая специализация, где ты особенно хорош.</p> -->
+      <p class="lead">О том как добавлять уникальные возможности</p>
+    </header>
+
+    <p class="">Трюк — это <b>исключение из правил</b>, которое делает персонажа уникальным. Не «ещё один +2», а разрешение сделать то, чего обычно нельзя, или узкая специализация, где ты особенно хорош.</p>
+
+
+    <section class="page-section">
+      <div class="stunt-hero">
+        <div class="stunt-formula">
+          <div class="kicker">рабочая формула</div>
+          <p><b>Потому что я</b> [аспект или происхождение], <b>я могу</b> [эффект] <b>когда</b> [узкое условие].</p>
+          <p>Хороший трюк помещается в одну фразу и не требует спорить, что такое «узкое условие». Если условие можно растянуть на всё — это не трюк, а попытка купить правило целиком.</p>
+          <p class="stunt-rule">Трюк не складывается сам с собой. Два одинаковых трюка не дают +4.</p>
+        </div>
+        <div>
+          <div class="mini-card mini-card--accent">
+            <h3>Сколько трюков</h3>
+            <p><b>Три бесплатных.</b> Каждый следующий стоит 1 refresh. Refresh — сколько жетонов ты получаешь в начале сессии; ниже 1 он не опускается.</p>
+          </div>
+          <div class="stunt-count" id="stunt-count">
+            <div class="count-label">посчитай сам</div>
+            <div class="count-ctrl">
+              <button class="count-btn" id="count-minus" type="button" aria-label="Меньше трюков">−</button>
+              <span class="count-num" id="count-num">3</span><span class="count-unit" id="count-unit"> трюка</span>
+              <button class="count-btn" id="count-plus" type="button" aria-label="Больше трюков">+</button>
+            </div>
+            <div class="count-refresh">
+              <span class="tag">refresh</span>
+              <span class="refresh-tokens" id="refresh-tokens"></span>
+              <b id="refresh-num">3</b>
+            </div>
+            <p class="count-note" id="count-note">Три бесплатных трюка — refresh 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Три бесплатных трюка — базовое правило. Два — настройка ваншота: если за столом хочется короче, можно договориться об одном-двух.</blockquote>
+    </figure>
+
+    <section class="page-section" aria-labelledby="types-title">
+      <div class="section-head"><h2 id="types-title">Четыре типа трюков</h2><span class="kicker">выбери один</span></div>
+      <div class="stunt-grid">
+        <article class="stunt-card">
+          <span class="stunt-type">1 · Узкий бонус</span>
+          <h3>+2 в конкретной ситуации</h3>
+          <p>Самый простой и безопасный тип. Не «+2 ко всему», а «+2, когда условие выполнено».</p>
+          <div class="stunt-builder" id="stunt-builder">
+            <div class="kicker">собери свой трюк</div>
+            <p class="builder-phrase">Ты получаешь <b>+2 к</b> <select id="builder-skill" aria-label="Навык"></select>, <b>когда</b> <input type="text" id="builder-when" maxlength="70" aria-label="Условие">.</p>
+          </div>
+          <div class="stunt-effect"><b>Пример:</b> «Тень в толпе» — +2 к Скрытности, когда рядом есть хотя бы пять человек.</div>
+        </article>
+        <article class="stunt-card">
+          <span class="stunt-type">2 · Исключение</span>
+          <h3>Один навык заменяет другой</h3>
+          <p>Ты используешь навык в ситуации, где обычно нужен другой. Это расширяет возможности, но не отменяет ставку.</p>
+          <div class="stunt-builder" id="stunt-builder-2">
+            <div class="kicker">собери свой трюк</div>
+            <p class="builder-phrase">Используй <select id="b2-skill" aria-label="Навык"></select> вместо <select id="b2-vs" aria-label="Вместо какого"></select>, чтобы <input type="text" id="b2-purpose" maxlength="70" aria-label="Для чего">.</p>
+          </div>
+          <div class="stunt-effect"><b>Пример:</b> «Чужие карманы» — используй Взлом вместо Обмана, чтобы незаметно подбросить предмет.</div>
+        </article>
+        <article class="stunt-card">
+          <span class="stunt-type">3 · Особый эффект</span>
+          <h3>Раз за сцену — рычаг</h3>
+          <p>Трюк даёт бесплатный призыв, буст или маленькое изменение сцены. Это не «победа», а дополнительный рычаг.</p>
+          <div class="stunt-builder" id="stunt-builder-3">
+            <div class="kicker">собери свой трюк</div>
+            <p class="builder-phrase">Раз за <select id="b3-per" aria-label="Период"></select>, когда <input type="text" id="b3-when" maxlength="70" aria-label="Условие">, получи <select id="b3-effect" aria-label="Эффект"></select>.</p>
+          </div>
+          <div class="stunt-effect"><b>Пример:</b> «Старые долги» — раз за сессию объяви, что у тебя есть знакомый в этом месте, и получи бесплатный призыв.</div>
+        </article>
+        <article class="stunt-card">
+          <span class="stunt-type">4 · Разрешение</span>
+          <h3>Ты можешь то, что нельзя другим</h3>
+          <p>Без трюка действие было бы невозможно. С трюком — становится проверкой или просто фактом.</p>
+          <div class="stunt-builder" id="stunt-builder-4">
+            <div class="kicker">собери свой трюк</div>
+            <p class="builder-phrase">Ты можешь <input type="text" id="b4-can" maxlength="70" aria-label="Способность">, но <select id="b4-limit" aria-label="Ограничение"></select>.</p>
+          </div>
+          <div class="stunt-effect"><b>Пример:</b> «Говорит с крысами» — ты понимаешь крыс и можешь задать им один вопрос за сцену.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="how-title">
+      <div class="section-head"><h2 id="how-title">Как придумать свой</h2></div>
+      <div class="prose">
+        <p>Начни с описания. Сачала сформулируй общими словами как будто это история. Затем выбери <b>тип</b> и сузь условие так, чтобы его было легко проверить за столом.</p>
+        <p>Проверь три вещи: <b>не слишком ли широко</b> (работает всегда?), <b>есть ли цена</b> (раз за сцену, только при условии), <b>интересно ли это описывать</b>. Если трюк не меняет ни одного решения в истории — он не нужен.</p>
+      </div>
+      <div class="stunt-path" id="stunt-path">
+        <div class="path-btns" role="group" aria-label="Шаги трюка">
+          <button class="path-btn is-active" type="button" data-step="1">1 · Набросок</button>
+          <button class="path-btn" type="button" data-step="2">2 · Проверка</button>
+          <button class="path-btn" type="button" data-step="3">3 · Трюк</button>
+        </div>
+        <div class="path-stage path-stage--1" id="path-stage" aria-live="polite"></div>
+        <div class="path-actions">
+          <button class="ui-button" id="path-reset" type="button">Сброс</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section" aria-labelledby="bad-title">
+      <div class="section-head"><h2 id="bad-title">Плохие трюки</h2><span class="kicker">и как их починить</span></div>
+      <div class="bad-stunts">
+        <div class="bad-stunt">
+          <h3>«+2 ко всем проверкам Взлома»</h3>
+          <p class="spoiler" role="button" tabindex="0" aria-expanded="false" title="Нажми, чтобы раскрыть">Слишком широко: это не специализация, а постоянный бонус.</p>
+          <span class="fix"><b>Починить:</b> сузить до старых замков, тонкой работы или замков, которые ты видел раньше.</span>
+        </div>
+        <div class="bad-stunt">
+          <h3>«Я всегда побеждаю в споре»</h3>
+          <p class="spoiler" role="button" tabindex="0" aria-expanded="false" title="Нажми, чтобы раскрыть">Нет ставки и нет цены. Такой трюк заканчивает сцену, а не открывает её.</p>
+          <span class="fix"><b>Починить:</b> «Раз за сцену перебрось Общение, если у тебя есть публика».</span>
+        </div>
+        <div class="bad-stunt">
+          <h3>«Мой трюк даёт +4, потому что я очень крутой»</h3>
+          <p class="spoiler" role="button" tabindex="0" aria-expanded="false" title="Нажми, чтобы раскрыть">Слишком сильно для одного трюка. +4 ломает математику 4dF.</p>
+          <span class="fix"><b>Починить:</b> оставить +2 или сделать эффект ситуативным: бесплатный призыв, а не постоянный бонус.</span>
+        </div>
+        <div class="bad-stunt">
+          <h3>«Трюк на всё, что не запрещено»</h3>
+          <p class="spoiler" role="button" tabindex="0" aria-expanded="false" title="Нажми, чтобы раскрыть">Это не трюк, а просьба всегда говорить «да».</p>
+          <span class="fix"><b>Починить:</b> назвать конкретное действие, конкретное условие и конкретную цену.</span>
+        </div>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Если из-за «плохого» трюка начинают спорить, подходит ли условие, — он сформулирован слишком широко. Сузь его до того, что видно в сцене.</blockquote>
+    </figure>
+
+    <section class="page-section" aria-labelledby="refresh-title">
+      <div class="section-head"><h2 id="refresh-title">Трюки и refresh</h2></div>
+      <div class="prose">
+        <p><b>Refresh</b> — это сколько жетонов ты получаешь в начале сессии. Обычно 3. Три трюка бесплатны; каждый следующий уменьшает refresh на 1, но нельзя оставлять refresh меньше одного.</p>
+        <p>Поэтому трюк — это не «ещё одна способность», а выбор: больше уникальности сейчас или больше свободы тратить жетоны потом. Иногда лучше взять один яркий трюк и оставить refresh 2.</p>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Для ваншота можно разрешить три трюка без уменьшения refresh — это упрощение, а не базовое правило. Главное, чтобы все за столом знали, как считается ресурс.</blockquote>
+    </figure>
+
+    <nav class="page-pager" id="page-pager" aria-label="Страницы руководства"></nav>
+  </main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+</body>
+</html>

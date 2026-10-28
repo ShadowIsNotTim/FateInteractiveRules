@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Навязы — Как играть в Fate</title>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/diagrams.css">
+<link rel="stylesheet" href="./05-compels.css">
+<script src="../assets/js/nav-data.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="./05-compels.js" defer></script>
+</head>
+<body data-root="../" data-page="compels">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<div class="site-shell">
+  <aside class="site-sidebar" id="site-sidebar" aria-label="Навигация по руководству"></aside>
+
+  <main class="site-main" id="content">
+    <header class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Как играть в Fate</a> <span class="sep">/</span> <span data-current-number>04</span></p>
+      <h1 class="page-title">Навязы</h1>
+      <p class="lead">О том как создавать проблемы и получая за это жетоны</p>
+    </header>
+
+    <section class="page-section" aria-labelledby="fork-title">
+      <div class="section-head"><h2 id="fork-title">У игрока есть выбор</h2></div>
+      <div class="prose">
+        <p>Ведущий смотрит на аспект и предлагает поворот: «Ты подслушиваешь за столом. Тебя узнают». Это не приказ и не наказание. Игрок выбирает: принять осложнение или заплатить, чтобы его избежать.</p>
+        <p><b>Принял</b> — получает +1 жетон, осложнение происходит, история движется. <b>Отказался</b> — платит −1 жетон, проблема не случается. Если жетонов нет, отказ обычно невозможен — это тоже часть давления.</p>
+      </div>
+    </section>
+
+    <section class="diagram" id="v10">
+      <div class="d-head"><span class="d-badge">V10</span><h2 class="d-title">Принять или отказаться</h2></div>
+      <!-- <p class="d-kicker">Это <b>развилка принятия и отказа</b>, а не «навяз или самонавяз». Принять — получить жетон и войти в историю; отказаться — заплатить и избежать проблемы.</p> -->
+
+      <div class="compel-offer" id="co-offer">
+        <div class="kicker">мастер предлагает</div>
+        <p class="quote">«Ты подслушиваешь за столом. Тебя узнают. Это навяз».</p>
+        <span class="co-offer-state" id="co-offer-state" aria-live="polite">выбор ещё не сделан</span>
+      </div>
+
+      <div class="co-tray" aria-live="polite">
+        <span class="co-tray-label">Жетоны Ворона</span>
+        <span class="co-tray-tokens" id="co-tokens"></span>
+        <span class="co-tray-count" id="co-count">3</span>
+      </div>
+
+      <svg class="branch" viewBox="0 0 800 70" aria-hidden="true">
+        <defs>
+          <marker id="branch-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#a63d2f"/>
+          </marker>
+        </defs>
+        <path d="M400 0 V18" fill="none" stroke="#a63d2f" stroke-width="1.4"/>
+        <path d="M400 18 H210 V60" fill="none" stroke="#a63d2f" stroke-width="1.4" marker-end="url(#branch-arrow)"/>
+        <path d="M400 18 H590 V60" fill="none" stroke="#a63d2f" stroke-width="1.4" marker-end="url(#branch-arrow)"/>
+      </svg>
+
+      <div class="branch-grid">
+        <div class="compel-card compel-card--yes" id="co-accept" data-action="accept" role="button" tabindex="0" aria-pressed="false">
+          <div class="kicker">ветка 1</div>
+          <h3>Принять</h3>
+          <div class="big">+1 жетон</div>
+          <p>Осложнение происходит. История движется, персонаж вляпывается — и получает ресурс, чтобы потом из этого выкрутиться.</p>
+        </div>
+        <div class="compel-card compel-card--no" id="co-refuse" data-action="refuse" role="button" tabindex="0" aria-pressed="false">
+          <div class="kicker">ветка 2</div>
+          <h3>Отказаться</h3>
+          <div class="big">−1 жетон</div>
+          <p>Ты избегаешь проблемы. Жетон уходит; выбор остаётся за тобой, но история не получает нового поворота.</p>
+        </div>
+      </div>
+
+      <p class="co-feedback" id="co-feedback" aria-live="polite">Выбери, что сделает Ворон: принять навяз и получить жетон или заплатить жетон и остаться в стороне.</p>
+
+      <div class="toolbar co-toolbar" style="margin-top:10px">
+        <button class="ui-button" id="co-next" type="button">Ещё навяз</button>
+        <button class="ui-button" id="co-reset" type="button">Сброс</button>
+      </div>
+
+      <div class="self-compel">
+        <h3>Самонавяз — отдельно</h3>
+        <p>В любой момент игрок сам предлагает осложнение: «Я хочу, чтобы меня узнал старый должник». За это он получает <b>+1 жетон</b>. Это способ игрока влиять на историю, а не реакция на предложение мастера.</p>
+      </div>
+
+      <div class="caveat"><b>Важная оговорка:</b> игрок лучше знает как бы поступил его персонаж. Если навяз основан на <b>характере</b> персонажа — отказ не должен стоить жетона. Если основа — навыки, статус или что-то еще, отказ стоит 1 жетон.</div>
+
+      <p class="example-line"><span class="label">Пример</span>Ворон хочет подслушать, но мастер говорит: «Тебя узнаёт старый должник». Ворон берёт жетон и попадает в историю.</p>
+    </section>
+
+    <section class="page-section" aria-labelledby="why-title">
+      <div class="section-head"><h2 id="why-title">Зачем соглашаться</h2></div>
+      <div class="prose">
+        <p>Навяз — не «мастер портит планы». Это способ сделать историю интереснее и вернуть игроку ресурс. Согласие часто выгоднее: ты получаешь жетон, сцена становится напряжённее, а персонаж — живее.</p>
+        <p>Отказ тоже нормален. Иногда проблема сейчас хуже, чем потеря жетона. Главное — чтобы выбор был настоящим, а не декоративным.</p>
+      </div>
+    </section>
+
+    
+
+    <section class="page-section" aria-labelledby="bad-title">
+      <div class="section-head"><h2 id="bad-title">Когда это не навяз</h2></div>
+      <div class="prose">
+        <p>Если это не меняет ход истории на ближайшее время. Если отказ невозможен без потери персонажа — это не навяз, а ультиматум.</p>
+        <!-- <p>В таких случаях ведущий не берёт жетон за отказ. Он либо предлагает настоящий выбор, либо признаёт: это не навяз.</p> -->
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Хороший навяз опирается на аспект и предлагает конкретный поворот, а не «ты просто проиграл». Игрок видит, что именно меняется.</blockquote>
+    </figure>
+
+    <!-- <figure class="chapter-quote">
+      <blockquote>Не дави «навязом», который не оставляет выбора: тогда жетон превращается в штраф, а не в ресурс.</blockquote>
+    </figure> -->
+
+    <section class="diagram" id="v9">
+      <div class="d-head"><span class="d-badge">V9</span><h2 class="d-title">Экономика жетонов</h2></div>
+      <p class="d-kicker">Жетоны ходят по кругу между игроком и мастером. Потратил на аспект — жетон ушёл мастеру; мастер давит на навяз — жетон вернулся.</p>
+
+            <svg class="eco-svg" viewBox="0 0 900 560" role="img" aria-label="Круговорот жетонов между игроком и мастером">
+        <defs>
+          <marker id="fp-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#a63d2f"/>
+          </marker>
+        </defs>
+        <circle cx="450" cy="280" r="196" fill="none" stroke="#ddd5c9" stroke-width="1" stroke-dasharray="2 8"/>
+        <path d="M 760 330 C 760 420, 650 496, 555 496" fill="none" stroke="#a63d2f" stroke-width="1.6" marker-end="url(#fp-arrow)"/>
+        <path d="M 350 496 C 250 496, 140 420, 140 330" fill="none" stroke="#a63d2f" stroke-width="1.6" marker-end="url(#fp-arrow)"/>
+        <path d="M 160 236 C 190 150, 270 95, 350 70" fill="none" stroke="#a63d2f" stroke-width="1.6" marker-end="url(#fp-arrow)"/>
+        <path d="M 552 64 C 620 60, 720 140, 756 238" fill="none" stroke="#a63d2f" stroke-width="1.6" marker-end="url(#fp-arrow)"/>
+
+        <g class="eco-grp" data-action="spend" role="button" tabindex="0" aria-label="Потратил: жетон мастеру">
+          <rect x="660" y="236" width="200" height="88" rx="10" fill="#fffdf8" stroke="#ddd5c9" stroke-width="1.2"/>
+          <text x="760" y="269" text-anchor="middle" font-family="Tsap, sans-serif" font-size="20" fill="#211b16">Потратил</text>
+          <text x="760" y="291" text-anchor="middle" font-family="Liberation Sans, sans-serif" font-size="12" fill="#786e61">жетон мастеру</text>
+        </g>
+
+        <g class="eco-grp" data-action="compel" role="button" tabindex="0" aria-label="Навяз принят: плюс один жетон">
+          <rect x="350" y="452" width="200" height="88" rx="10" fill="#fffdf8" stroke="#ddd5c9" stroke-width="1.2"/>
+          <text x="450" y="485" text-anchor="middle" font-family="Tsap, sans-serif" font-size="20" fill="#211b16">Навяз принят</text>
+          <text x="450" y="507" text-anchor="middle" font-family="Liberation Sans, sans-serif" font-size="12" fill="#5b6b4a">+1 жетон</text>
+        </g>
+
+        <g class="eco-grp" data-action="spend" role="button" tabindex="0" aria-label="Потратил: жетон мастеру">
+          <rect x="40" y="236" width="200" height="88" rx="10" fill="#fffdf8" stroke="#ddd5c9" stroke-width="1.2"/>
+          <text x="140" y="269" text-anchor="middle" font-family="Tsap, sans-serif" font-size="20" fill="#211b16">Потратил</text>
+          <text x="140" y="291" text-anchor="middle" font-family="Liberation Sans, sans-serif" font-size="12" fill="#786e61">жетон мастеру</text>
+        </g>
+
+        <g class="eco-grp" data-action="refuse" role="button" tabindex="0" aria-label="Отказ: минус один жетон">
+          <rect x="350" y="20" width="200" height="88" rx="10" fill="#fffdf8" stroke="#ddd5c9" stroke-width="1.2"/>
+          <text x="450" y="53" text-anchor="middle" font-family="Tsap, sans-serif" font-size="20" fill="#211b16">Отказ</text>
+          <text x="450" y="75" text-anchor="middle" font-family="Liberation Sans, sans-serif" font-size="12" fill="#a63d2f">−1 жетон</text>
+        </g>
+
+        <g class="eco-grp" data-action="refresh" role="button" tabindex="0" aria-label="Refresh: снова три жетона">
+          <circle cx="450" cy="280" r="86" fill="#f7f4ee" stroke="#ddd5c9" stroke-width="1"/>
+          <text x="450" y="272" text-anchor="middle" font-family="Tsap, sans-serif" font-size="22" fill="#a63d2f">Refresh 3</text>
+          <text x="450" y="294" text-anchor="middle" font-family="Liberation Sans, sans-serif" font-size="11" fill="#786e61">в начале сессии</text>
+          <text x="450" y="314" text-anchor="middle" font-family="Liberation Sans, sans-serif" font-size="10" fill="#9a8f80">снова 3 жетона</text>
+        </g>
+      </svg>
+
+      <div class="eco-counter" aria-live="polite">
+        <div class="eco-tray">
+          <span class="eco-tray-label">Игрок</span>
+          <span class="eco-tray-tokens" id="eco-player-tokens"></span>
+          <span class="eco-tray-count" id="eco-player-count">3</span>
+        </div>
+        <div class="eco-flow" aria-hidden="true">⇄</div>
+        <div class="eco-tray">
+          <span class="eco-tray-label">Мастер</span>
+          <span class="eco-tray-tokens" id="eco-gm-tokens"></span>
+          <span class="eco-tray-count" id="eco-gm-count">0</span>
+        </div>
+      </div>
+      <p class="eco-feedback" id="eco-feedback" aria-live="polite">Кликни по блоку на схеме: «Потратил» отдаёт жетон, «Навяз принят» возвращает, «Отказ» штрафует. Круг «Refresh» сбрасывает к трём.</p>
+    </section>
+
+<figure class="chapter-quote">
+      <blockquote>Жетон — не очко. Это право влиять на историю.</blockquote>
+    </figure>
+
+    <!-- <div class="cheat-ref"><b>На шпаргалке:</b> «отказ от навязя» и «самонавяз» — в зоне «в любое время».</div> -->
+
+    <nav class="page-pager" id="page-pager" aria-label="Страницы руководства"></nav>
+  </main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+</body>
+</html>

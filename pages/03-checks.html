@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Проверки и навыки — Как играть в Fate</title>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/diagrams.css">
+<link rel="stylesheet" href="./03-checks.css">
+<script src="../assets/js/nav-data.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="./03-checks.js" defer></script>
+</head>
+<body data-root="../" data-page="checks">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<div class="site-shell">
+  <aside class="site-sidebar" id="site-sidebar" aria-label="Навигация по руководству"></aside>
+
+  <main class="site-main" id="content">
+    <header class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Как играть в Fate</a> <span class="sep">/</span> <span data-current-number>02</span></p>
+      <h1 class="page-title">Проверки и навыки</h1>
+    </header>
+
+    <section class="page-section" aria-labelledby="formula-title">
+      <div class="section-head"><h2 id="formula-title">Формула</h2></div>
+      <div class="prose">
+        <p>На каждом кубике Fate три грани: <b>−</b>, <b>0</b>, <b>+</b>. Бросаем четыре, складываем. Получается от −4 до +4. Прибавляем навык — и получаем результат.</p>
+        <p>Ведущий называет <b>сложность</b> до или после броска. Если результат ниже — провал; равен — ничья; выше — успех; выше на 3 и более — успех со стилем.</p>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Кубы никогда не врут.</blockquote>
+    </figure>
+
+    <section class="diagram" id="v3-1">
+      <div class="d-head"><span class="d-badge">V3.1</span><h2 class="d-title">Бросок против сложности</h2></div>
+      <!-- <p class="d-kicker">Сначала — база: <b>4dF + навык</b>. Ведущий называет сложность до броска; здесь она зафиксирована на +3. Результат и сложность сравниваются в одной схеме.</p> -->
+
+      <div class="check-board">
+        <div class="formula formula--simple" id="simple-calc">
+          <div class="f-term">
+            <div class="f-label">Кубики</div>
+            <div class="f-value" id="simple-dice-total">0</div>
+            <div class="dice-row" id="simple-dice-row" aria-label="Четыре кубика"></div>
+            <button class="roll" id="simple-roll" type="button">Бросить 4dF</button>
+          </div>
+          <div class="f-op">+</div>
+          <div class="f-term">
+            <div class="f-label">Навык</div>
+            <div class="f-value">
+              <select class="inline-select" id="simple-skill" aria-label="Навык">
+                <option value="0">+0</option>
+                <option value="1">+1</option>
+                <option value="2">+2</option>
+                <option value="3">+3</option>
+                <option value="4" selected>+4</option>
+              </select>
+            </div>
+            <div class="f-sub">на старте</div>
+          </div>
+          <div class="f-op">=</div>
+          <div class="f-term f-result">
+            <div class="f-label">Результат</div>
+            <div class="f-value" id="simple-result-total">+4</div>
+            <div class="f-sub">после броска и навыка</div>
+          </div>
+        </div>
+
+        <div class="check-compare" aria-live="polite">
+          <div class="check-compare-label">сравниваем</div>
+          <div class="scale">
+            <div class="scale-card"><span>результат</span><b id="simple-scale-total">+4</b></div>
+            <div class="scale-vs">vs</div>
+            <div class="scale-card"><span>сложность</span><b id="simple-scale-diff">+3</b></div>
+          </div>
+          <div class="scale-result" id="simple-scale-text">разница +1 → успех</div>
+        </div>
+
+        <div class="check-meaning" id="simple-meaning-box" aria-live="polite">
+          <h3 id="simple-meaning-title">Успех</h3>
+          <p id="simple-meaning">Результат выше сложности. Персонаж получает то, за чем шёл, но без дополнительного рычага.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Провал — не поражение. История не останавливается: он помогает двигать сюжет дальше.</blockquote>
+    </figure>
+
+    <section class="page-section" aria-labelledby="dist-title">
+      <div class="section-head"><h2 id="dist-title">Распределение 4dF</h2><span class="kicker">81 исход</span></div>
+      <p class="section-lead">Четыре кубика Fate дают 81 равновероятный исход. Ноль выпадает чаще всего, крайние значения — редко. Поэтому навык +4 — это много, а +1 — мало.</p>
+      <div class="hist-panel">
+        <div class="hist" aria-label="Распределение 4dF">
+          <div class="hist-col" tabindex="0" data-percent="1,2%" aria-label="−4: 1,2%"><div class="hist-fill" style="height:6px"></div><span class="hist-label">−4</span></div>
+          <div class="hist-col" tabindex="0" data-percent="4,9%" aria-label="−3: 4,9%"><div class="hist-fill" style="height:22px"></div><span class="hist-label">−3</span></div>
+          <div class="hist-col" tabindex="0" data-percent="12,3%" aria-label="−2: 12,3%"><div class="hist-fill" style="height:52px"></div><span class="hist-label">−2</span></div>
+          <div class="hist-col" tabindex="0" data-percent="19,8%" aria-label="−1: 19,8%"><div class="hist-fill" style="height:82px"></div><span class="hist-label">−1</span></div>
+          <div class="hist-col" tabindex="0" data-percent="23,5%" aria-label="0: 23,5%"><div class="hist-fill is-center" style="height:98px"></div><span class="hist-label">0</span></div>
+          <div class="hist-col" tabindex="0" data-percent="19,8%" aria-label="+1: 19,8%"><div class="hist-fill" style="height:82px"></div><span class="hist-label">+1</span></div>
+          <div class="hist-col" tabindex="0" data-percent="12,3%" aria-label="+2: 12,3%"><div class="hist-fill" style="height:52px"></div><span class="hist-label">+2</span></div>
+          <div class="hist-col" tabindex="0" data-percent="4,9%" aria-label="+3: 4,9%"><div class="hist-fill" style="height:22px"></div><span class="hist-label">+3</span></div>
+          <div class="hist-col" tabindex="0" data-percent="1,2%" aria-label="+4: 1,2%"><div class="hist-fill" style="height:6px"></div><span class="hist-label">+4</span></div>
+        </div>
+      </div>
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Поэтому один и тот же навык +2 иногда выглядит как +6, а иногда как −2.</blockquote>
+    </figure>
+
+    <section class="diagram" id="v5">
+      <div class="d-head">
+        <span class="d-badge">V5</span>
+        <h2 class="d-title">Пирамида навыков</h2>
+        <div class="info-wrap">
+          <button class="info-toggle" type="button" aria-expanded="false" aria-controls="pyr-help" aria-label="Как пользоваться пирамидой навыков">i</button>
+          <div class="info-popover" id="pyr-help" hidden>
+            <p><b>Перетащи навык в слот.</b> Клик по заполненному слоту освобождает его.</p>
+            <p>Можно перетаскивать или выбрать чип кликом и кликнуть по слоту. «Пример Ворона» заполнит пирамиду автоматически.</p>
+          </div>
+        </div>
+      </div>
+      <p class="d-kicker">На старте — <b>1 × +4, 2 × +3, 3 × +2, 4 × +1</b>. Десять слотов, не пятнадцать.</p>
+
+      <div class="pyramid-wrap">
+        <div>
+          <div class="pyramid" aria-label="Пирамида навыков: перетащи навыки в слоты">
+            <div class="pyr-row"><div class="pyr-slot" data-level="4"><span class="pyr-level">+4</span><span class="pyr-skill">сюда</span></div></div>
+            <div class="pyr-row">
+              <div class="pyr-slot" data-level="3"><span class="pyr-level">+3</span><span class="pyr-skill">сюда</span></div>
+              <div class="pyr-slot" data-level="3"><span class="pyr-level">+3</span><span class="pyr-skill">сюда</span></div>
+            </div>
+            <div class="pyr-row">
+              <div class="pyr-slot" data-level="2"><span class="pyr-level">+2</span><span class="pyr-skill">сюда</span></div>
+              <div class="pyr-slot" data-level="2"><span class="pyr-level">+2</span><span class="pyr-skill">сюда</span></div>
+              <div class="pyr-slot" data-level="2"><span class="pyr-level">+2</span><span class="pyr-skill">сюда</span></div>
+            </div>
+            <div class="pyr-row">
+              <div class="pyr-slot" data-level="1"><span class="pyr-level">+1</span><span class="pyr-skill">сюда</span></div>
+              <div class="pyr-slot" data-level="1"><span class="pyr-level">+1</span><span class="pyr-skill">сюда</span></div>
+              <div class="pyr-slot" data-level="1"><span class="pyr-level">+1</span><span class="pyr-skill">сюда</span></div>
+              <div class="pyr-slot" data-level="1"><span class="pyr-level">+1</span><span class="pyr-skill">сюда</span></div>
+            </div>
+          </div>
+          <div class="pyr-actions">
+            <button class="ui-button" id="pyr-example" type="button">Пример Ворона</button>
+            <button class="ui-button" id="pyr-clear" type="button">Очистить</button>
+          </div>
+        </div>
+        <div>
+          <div class="skill-groups">
+            <div class="skill-group">
+              <h4>Физические</h4>
+              <div class="chips"><span class="chip skill-chip" draggable="true" data-skill="Атлетика">Атлетика</span><span class="chip skill-chip" draggable="true" data-skill="Драка">Драка</span><span class="chip skill-chip" draggable="true" data-skill="Стрельба">Стрельба</span><span class="chip skill-chip" draggable="true" data-skill="Телосложение">Телосложение</span><span class="chip skill-chip" draggable="true" data-skill="Вождение">Вождение</span><span class="chip skill-chip" draggable="true" data-skill="Скрытность">Скрытность</span></div>
+            </div>
+            <div class="skill-group">
+              <h4>Социальные</h4>
+              <div class="chips"><span class="chip skill-chip" draggable="true" data-skill="Общение">Общение</span><span class="chip skill-chip" draggable="true" data-skill="Провокация">Провокация</span><span class="chip skill-chip" draggable="true" data-skill="Обман">Обман</span><span class="chip skill-chip" draggable="true" data-skill="Связи">Связи</span><span class="chip skill-chip" draggable="true" data-skill="Ресурсы">Ресурсы</span></div>
+            </div>
+            <div class="skill-group">
+              <h4>Умственные</h4>
+              <div class="chips"><span class="chip skill-chip" draggable="true" data-skill="Внимательность">Внимательность</span><span class="chip skill-chip" draggable="true" data-skill="Расследование">Расследование</span><span class="chip skill-chip" draggable="true" data-skill="Знания">Знания</span><span class="chip skill-chip" draggable="true" data-skill="Эмпатия">Эмпатия</span><span class="chip skill-chip" draggable="true" data-skill="Воля">Воля</span><span class="chip skill-chip" draggable="true" data-skill="Ремесло">Ремесло</span><span class="chip skill-chip" draggable="true" data-skill="Взлом">Взлом</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>Персонаж игрока имеет навык более чем в половине случаев, а в одной области вообще профессионал.</blockquote>
+    </figure>
+
+    <section class="diagram" id="v14">
+      <div class="d-head"><span class="d-badge">V14</span><h2 class="d-title">Череда проверок</h2></div>
+      <p class="d-kicker">Это <b>состязание (contest)</b>: несколько проверок, где каждая победа даёт очко. Кто первым наберёт 3 очка — тот выиграл. Один бросок здесь не решает сцену целиком.</p>
+
+      <div class="card">
+        <div class="contest-top">
+          <div>
+            <div class="track-label">Ворон</div>
+            <div class="track" id="raven-track"><span class="track-box">1</span><span class="track-box">2</span><span class="track-box is-last">3</span></div>
+          </div>
+          <div class="contest-score"><b id="contest-score-value">0:0</b><span>счёт</span></div>
+          <div>
+            <div class="track-label">Хозяин</div>
+            <div class="track" id="host-track"><span class="track-box">1</span><span class="track-box">2</span><span class="track-box is-last">3</span></div>
+          </div>
+        </div>
+        <div class="contest-controls">
+          <button class="ui-button" id="contest-next" type="button">Дальше</button>
+          <button class="ui-button" id="contest-reset" type="button">Сброс</button>
+        </div>
+      </div>
+
+      <div class="contest-story">
+        <div class="kicker">что происходит</div>
+        <h3 id="contest-scene">Состязание не начато</h3>
+        <p id="contest-detail">Ворону нужен ответ хозяина. Хозяин хочет, чтобы Ворон ушёл ни с чем. Каждый бросок даёт очко. 3 очка = победа.</p>
+        <div class="contest-check-label" id="contest-check-label" hidden>проверка</div>
+        <div class="contest-duel" id="contest-duel" hidden>
+          <div class="duel-side">
+            <span class="duel-name" id="contest-left-name">Ворон</span>
+            <span class="duel-formula" id="contest-left-formula">—</span>
+            <span class="duel-total"><span>итог</span><b id="contest-left-total">—</b></span>
+          </div>
+          <div class="duel-vs">vs</div>
+          <div class="duel-side">
+            <span class="duel-name" id="contest-right-name">Хозяин</span>
+            <span class="duel-formula" id="contest-right-formula">—</span>
+            <span class="duel-total"><span>итог</span><b id="contest-right-total">—</b></span>
+          </div>
+        </div>
+        <p class="contest-verdict" id="contest-verdict" hidden></p>
+        <div class="contest-after-wrap" id="contest-after-wrap" hidden>
+          <div class="contest-after-label">после проверки</div>
+          <p id="contest-after"></p>
+        </div>
+        <div class="contest-final" id="contest-final" hidden><b>Состязание закончилось: 3:1 в пользу Ворона.</b> Хозяин опозорен и вынужден ответить, а толпа на стороне Ворона.</div>
+      </div>
+
+      <!-- тест: таблица временно скрыта
+      <div class="table-wrap" style="margin-top:18px">
+        <table class="contest-table">
+          <thead><tr><th>Шаг</th><th>Что происходит</th><th>Проверка</th><th>Результат</th><th>Счёт</th></tr></thead>
+          <tbody>
+            <tr data-step="1"><td>1</td><td>Хозяин пытается унизить Ворона</td><td>Провокация хозяина vs Воля Ворона</td><td>Хозяин успешен</td><td class="score-cell">—</td></tr>
+            <tr data-step="2"><td>2</td><td>На Ворона «случайно» опрокидывают бокал</td><td>Провокация хозяина vs Общение Ворона</td><td>Ничья</td><td class="score-cell">—</td></tr>
+            <tr data-step="3"><td>3</td><td>Ворон отвечает публично</td><td>Общение Ворона vs Обман хозяина</td><td>Ворон успешен</td><td class="score-cell">—</td></tr>
+            <tr data-step="4"><td>4</td><td>Последний вопрос</td><td>Общение Ворона vs Провокация хозяина</td><td>Ворон успешен со стилем (+2)</td><td class="score-cell">—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      -->
+
+    </section>
+
+    <figure class="chapter-quote">
+      <blockquote>В книге есть ещё «испытание» (challenge) — серия проверок против сложности.</blockquote>
+    </figure>
+
+    <figure class="chapter-quote">
+      <blockquote>Не путать с конфликтом! В состязании и испытании урон никто никому не наносит, а в конфликте - вполне!</blockquote>
+    </figure>
+
+    <nav class="page-pager" id="page-pager" aria-label="Страницы руководства"></nav>
+  </main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+</body>
+</html>

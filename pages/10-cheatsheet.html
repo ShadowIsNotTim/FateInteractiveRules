@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Шпаргалка — Как играть в Fate</title>
+<link rel="stylesheet" href="../assets/css/base.css">
+<link rel="stylesheet" href="../assets/css/layout.css">
+<link rel="stylesheet" href="../assets/css/diagrams.css">
+<link rel="stylesheet" href="./10-cheatsheet.css">
+<script src="../assets/js/nav-data.js" defer></script>
+<script src="../assets/js/site.js" defer></script>
+<script src="./10-cheatsheet.js" defer></script>
+</head>
+<body data-root="../" data-page="cheatsheet">
+<a class="skip-link" href="#content">К содержанию</a>
+
+<div class="site-shell">
+  <aside class="site-sidebar" id="site-sidebar" aria-label="Навигация по руководству"></aside>
+
+  <main class="site-main" id="content">
+    <header class="page-head">
+      <p class="breadcrumb"><a href="../index.html">Как играть в Fate</a> <span class="sep">/</span> <span data-current-number>08</span></p>
+      <h1 class="page-title">Шпаргалка</h1>
+      <p class="lead">Это <b>позвоночник руководства</b>. Сюда возвращаются во время игры: выбрать действие, посмотреть исход, добавить коррекцию и понять, что можно сделать в свободное время. Не учи наизусть — просто знай, где смотреть.</p>
+    </header>
+
+    <section class="page-section" aria-labelledby="how-title">
+      <div class="section-head"><h2 id="how-title">Как ею пользоваться</h2><span class="kicker">четыре шага</span></div>
+      <div class="grid-4">
+        <div class="mini-card mini-card--accent"><h3>1 · Действие</h3><p>Что персонаж делает: преодоление, преимущество, атака или защита. В свободной сцене — чаще первые два.</p></div>
+        <div class="mini-card"><h3>2 · Исход</h3><p>Сравни результат с сопротивлением: провал, ничья, успех, успех со стилем.</p></div>
+        <div class="mini-card mini-card--olive"><h3>3 · Коррекция</h3><p>Аспект, бесплатный призыв, трюк. Добавляй только то, что действительно подходит.</p></div>
+        <div class="mini-card mini-card--warm"><h3>4 · Свободное время</h3><p>Заявить деталь, помочь, отказаться от навязя. Это не конфликтный ход.</p></div>
+      </div>
+    </section>
+
+    <section class="diagram" id="v16">
+      <div class="d-head"><span class="d-badge">V16</span><h2 class="d-title">Шпаргалка с подсветкой</h2></div>
+      <p class="d-kicker">Наведи на зону: она подсветится, подпишется и покажет, куда перейти за подробностями. Четыре зоны — действия, исходы, коррекция броска и свободное время.</p>
+      <div class="annotation-toolbar">
+        <button class="ui-button" id="cheat-toggle" type="button" aria-pressed="false">Показать чистый лист</button>
+        <span class="muted">наведи на зону или коснись её на телефоне</span>
+      </div>
+      <figure class="annotated" id="cheat-figure">
+        <!-- Зоны шпаргалки. Точные границы правятся в style у `.hotspot--zone` ниже:
+             left / top / width / height — проценты от размера картинки. -->
+
+
+        <img src="../assets/img/fate_cheatsheet.png" alt="Шпаргалка игрока Fate с четырьмя подсвеченными зонами">
+        <div class="hotspot hotspot--zone" tabindex="0" aria-label="1. Действия" style="left:1.6%;top:2.0%;width:11.5%;height:96.6%"><span class="num">1</span><span class="zone-label"><b>1 · Действия</b><span>Преодоление, преимущество, атака и защита — четыре действия конфликта.</span><span class="zone-goto"><a class="goto-btn" href="06-conflict.html#v6">Четыре действия →</a></span></span></div>
+        <div class="hotspot hotspot--zone" tabindex="0" aria-label="2. Исходы" style="left:12.3%;top:1.9%;width:40.3%;height:72.1%"><span class="num">2</span><span class="zone-label"><b>2 · Исходы</b><span>Провал, ничья, успех и успех со стилем — сравни результат с сопротивлением.</span><span class="zone-goto"><a class="goto-btn" href="06-conflict.html#v7">Матрица исходов →</a></span></span></div>
+        <div class="hotspot hotspot--zone" tabindex="0" aria-label="3. Коррекция броска" style="left:56.2%;top:1.9%;width:19.9%;height:58.6%"><span class="num">3</span><span class="zone-label"><b>3 · Коррекция броска</b><span>Аспекты за жетон, бесплатный призыв, трюк — только когда действительно подходит.</span><span class="zone-goto"><a class="goto-btn" href="04-aspects.html">Аспекты →</a><a class="goto-btn" href="07-stunts.html">Трюки →</a></span></span></div>
+        <div class="hotspot hotspot--zone" tabindex="0" aria-label="4. Свободное время" style="left:79.2%;top:1.9%;width:19.8%;height:85.0%"><span class="num">4</span><span class="zone-label zone-label--right"><b>4 · Свободное время</b><span>Заявить деталь, помочь другому, отказаться от навязя.</span><span class="zone-goto"><a class="goto-btn" href="05-compels.html">Навязы →</a><a class="goto-btn" href="07-stunts.html">Трюки →</a><button class="goto-btn goto-btn--modal" type="button" data-modal="detail">Заявить деталь</button><button class="goto-btn goto-btn--modal" type="button" data-modal="help">Помочь в броске</button></span></span></div>
+      </figure>
+      <div class="pult-flow"><b>выбрал действие слева</b> <i>→</i> <b>посмотрел исход сверху</b> <i>→</i> <b>добавил коррекцию справа</b> <i>→</i> <b>не конфликт? «в любое время»</b></div>
+      <p class="note note--olive"><b>Шпаргалка — не экзамен.</b> На неё смотрят, а не запоминают. Чистая справочная матрица ниже — та же логика, но без рисунка.</p>
+    </section>
+
+    
+
+    
+
+    
+
+    <nav class="page-pager" id="page-pager" aria-label="Страницы руководства"></nav>
+  </main>
+<footer class="site-footer" id="site-footer"></footer>
+</div>
+
+<div class="modal-backdrop" id="modal-backdrop" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" type="button" aria-label="Закрыть">×</button>
+    <h3 id="modal-title">Заявить деталь</h3>
+    <p id="modal-text"></p>
+  </div>
+</div>
+</body>
+</html>
